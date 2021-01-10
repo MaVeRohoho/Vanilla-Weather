@@ -3,7 +3,7 @@ body {
   color: black;
 }
 .weather-vanilla-wrapper {
-  max-width: 600px;
+  max-width: 100%;
   margin: 50px auto;
 }
 .weather-vanilla {
@@ -11,11 +11,17 @@ body {
   border: 1px solid #000000;
   border-radius: 5px;
 }
+form {
+  margin-bottom: 30px;
+}
 
 h1 {
   font-size: 30px;
-  font-weight: 200;
-  margin-bottom: 25px;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+small {
+  font-size: 16px;
 }
 
 ul {
@@ -26,6 +32,15 @@ li {
   list-style-type: none;
   font-size: 12 px;
 }
+h6 {
+  font-size: 12px;
+}
+
 .icon {
   font-size: 30px;
+  padding-left: 40px;
+}
+
+p {
+  font-size: 12px;
 }

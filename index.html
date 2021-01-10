@@ -14,35 +14,77 @@
 <div class="container">
     <div class="weather-vanilla-wrapper">
     <div class="weather-vanilla">
-        <div class ="row">
-            <div class="col-6"> 
-                <div class="clearfix">
-            <div class= "float-left">
-                <h1>Zurich   <dev class="icon">  <i class="fal fa-snowflake"></i></h1>
-                <ul>
-                    <li> Sunday 03:00</li>
-                    <li>Clear Sky</li>
-                </ul>
-            </div>
+        <form class="search-form" id="search-form">
+            <div class="row">
+                <div class="col-6">
+                    <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
+                        class="form-control shadow-sm" />
+                </div>
+                <div class="col-3">
+                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-success w-100" id="current-button">
+                        Location
+                    </button>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="clearfix">
-                    <div class="float-left">
-                <h1> 12 °C | °F </h1>
-                <ul>
-                    <li>Precipitation: 15%</li>
-                    <li>Humidity: 0 %</li>
-                    <li>Wind : 20 km/h </li>
-                </ul>
-                    </div>
-                </div>
-            </div>
+        </form>
+    <hr/>
+<div class="row">
+    <div class="col-sm">
+        <h1>Zurich</h1>
+    </div>
+    <div class="col-sm">
+        <dev class="icon"> <i class="fal fa-snowflake"></i>
+    </div>
+    <div class="col-sm">
+        <h1>12 <small> °C | °F</small> </h1>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-sm">
+        <ul>
+            <li> Sunday 03:00</li>
+            <li>Clear Sky</li>
+        </ul>
+    </div>
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
+        <ul>
+            <li>Precipitation: 15%</li>
+            <li>Humidity: 0 %</li>
+            <li>Wind : 20 km/h </li>
+        </ul>
+    </div>
+</div>
+<hr />
+    <div class="row">
+        <div class="col-sm-2">
+            <h6>Mon.</h6>
+        </div>
+        <div class="col-sm-2">
+            <h6>Tue.</h6>
+        </div>
+        <div class="col-sm-2">
+            <h6>Wed.</h6>
+        </div>
+        <div class="col-sm-2">
+            <h6>Thu.</h6>
+        </div>
+        <div class="col-sm-2">
+            <h6>Fri.</h6>
+        </div>
+        <div class="col-sm-2">
+        <h6>Sat.</h6>
         </div>
     </div>
-            <small>
+        </div>
+            <p>
                 <a href="https://github.com/MaVeRohoho/Vanilla-Weather" target="blank">Open-Source by </a>Margot Rohner
-            </small>
+            </p>
     </div>
 </div>
 <script src="script.js"></script>
