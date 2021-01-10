@@ -17,13 +17,10 @@ form {
 }
 input {
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
-  color: black;
-  border: black;
-  margin: black;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 100;
   margin-bottom: 0;
 }
@@ -41,11 +38,15 @@ li {
 }
 h6 {
   font-size: 12px;
+  text-align: center;
 }
 
 .icon {
   font-size: 30px;
   padding-left: 40px;
+}
+.iconSmall {
+  text-align: center;
 }
 
 p {
