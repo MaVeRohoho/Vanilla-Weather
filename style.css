@@ -2,33 +2,30 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
 }
-
-.weather-vanilla {
+.weather-vanilla-wrapper {
   max-width: 600px;
   margin: 50px auto;
+}
+.weather-vanilla {
   padding: 30px;
-  padding-left: 60px;
   border: 1px solid #000000;
   border-radius: 5px;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 25px;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
 li {
   list-style-type: none;
-  font-size: 8 px;
+  font-size: 12 px;
 }
-i {
-  font-size: 35px;
-  display: block;
-  margin-left: 200px;
-}
-
-h4 {
-  font-size: 40px;
-}
-
-h6 {
+.icon {
+  font-size: 30px;
 }
