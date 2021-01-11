@@ -1,5 +1,5 @@
 let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let city = "Mali";
+let city = "Beijing";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 function formatDate (timestamp){
@@ -31,19 +31,44 @@ function displayTemp (response) {
     dateElement.innerHTML = formatDate (response.data.dt * 1000);     
     let iconElement = document.querySelector ("#iconOpenWeather")     
     iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
-    
+
     let mainIcon = document.querySelector("#mainIcon");
     if(response.data.weather[0].icon === "01d") {
     mainIcon.innerHTML = `<i class="fal fa-sun"></i>`;
     } else if(response.data.weather[0].icon === "01n"){
-    mainIcon.innerHTML = `<i class="fal fa-moon"></i>`;
+    mainIcon.innerHTML = `<i class="fal fa-moon-stars"></i>`;
     } else if(response.data.weather[0].icon === "02d"){
     mainIcon.innerHTML = `<i class="fal fa-cloud-sun"></i>`;
     } else if(response.data.weather[0].icon === "02n"){
     mainIcon.innerHTML = `<i class="fal fa-moon-cloud"></i>`;
     } else if(response.data.weather[0].icon === "03d"){
     mainIcon.innerHTML = `<i class="fal fa-cloud"></i>`;
+    } else if(response.data.weather[0].icon === "03n"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud"></i>`;
+    } else if(response.data.weather[0].icon === "04d"){
+    mainIcon.innerHTML = `<i class="fal fa-clouds-sun"></i>`;
+    } else if(response.data.weather[0].icon === "04n"){
+    mainIcon.innerHTML = `<i class="fal fa-clouds-moon"></i>`;
+    } else if(response.data.weather[0].icon === "09d"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud-showers-heavy"></i>`;
+    } else if(response.data.weather[0].icon === "09n"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud-moon-rain"></i>`;
+    } else if(response.data.weather[0].icon === "10d"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud-sun-rain"></i>`;
+    } else if(response.data.weather[0].icon === "10n"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud-moon-rain"></i>`;
+    } else if(response.data.weather[0].icon === "11d"){
+    mainIcon.innerHTML = `<i class="fal fa-thunderstorm-sun"></i>`;
+    } else if(response.data.weather[0].icon === "11n"){
+    mainIcon.innerHTML = `<i class="fal fa-thunderstorm-moon"></i>`;
+    } else if(response.data.weather[0].icon === "13d"){
+    mainIcon.innerHTML = `<i class="fal fa-snowflake"></i>`;
+    } else if(response.data.weather[0].icon === "13n"){
+    mainIcon.innerHTML = `<i class="fal fa-snowflakes"></i>`;
+    } else if(response.data.weather[0].icon === "50d"){
+    mainIcon.innerHTML = `<i class="fal fa-fog"></i>`;
+    } else if(response.data.weather[0].icon === "50n"){
+    mainIcon.innerHTML = `<i class="fal fa-fog"></i>`;
+    }
 }
-
 axios.get(apiUrl).then(displayTemp);
-
