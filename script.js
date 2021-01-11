@@ -1,7 +1,6 @@
 let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let city = "Denver";
+let city = "Mali";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 
 function formatDate (timestamp){
     let date = new Date (timestamp);
@@ -17,8 +16,6 @@ function formatDate (timestamp){
     }
     return `${day} ${hours}:${minutes}`;
 }
-
-
 function displayTemp (response) {
     let temperatureElement = document.querySelector ("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);    
@@ -31,8 +28,22 @@ function displayTemp (response) {
     let humidElement = document.querySelector ("#humid");
     humidElement.innerHTML = response.data.main.humidity; 
     let dateElement = document.querySelector ("#date");
-    dateElement.innerHTML = formatDate (response.data.dt * 1000);          
+    dateElement.innerHTML = formatDate (response.data.dt * 1000);     
+    let iconElement = document.querySelector ("#iconOpenWeather")     
+    iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    
+    let mainIcon = document.querySelector("#mainIcon");
+    if(response.data.weather[0].icon === "01d") {
+    mainIcon.innerHTML = `<i class="fal fa-sun"></i>`;
+    } else if(response.data.weather[0].icon === "01n"){
+    mainIcon.innerHTML = `<i class="fal fa-moon"></i>`;
+    } else if(response.data.weather[0].icon === "02d"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud-sun"></i>`;
+    } else if(response.data.weather[0].icon === "02n"){
+    mainIcon.innerHTML = `<i class="fal fa-moon-cloud"></i>`;
+    } else if(response.data.weather[0].icon === "03d"){
+    mainIcon.innerHTML = `<i class="fal fa-cloud"></i>`;
 }
 
-
 axios.get(apiUrl).then(displayTemp);
+
