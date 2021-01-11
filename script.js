@@ -1,6 +1,8 @@
+function search (city){
 let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
-let city = "Beijing";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemp);
+}
 
 function formatDate (timestamp){
     let date = new Date (timestamp);
@@ -71,4 +73,11 @@ function displayTemp (response) {
     mainIcon.innerHTML = `<i class="fal fa-fog"></i>`;
     }
 }
-axios.get(apiUrl).then(displayTemp);
+function handleSubmit (event){
+    event.preventDefault();
+     let cityInputElement = document.querySelector("#city-input");
+     search(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+

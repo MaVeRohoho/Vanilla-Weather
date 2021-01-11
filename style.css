@@ -22,11 +22,14 @@ input {
 h1 {
   font-size: 40px;
   font-weight: 100;
-  margin-bottom: 0;
+  margin-top: 15px;
 }
 
 smaller {
   font-size: 16px;
+}
+.temp {
+  margin-top: 15px;
 }
 
 ul {
@@ -43,12 +46,13 @@ h6 {
   text-align: center;
 }
 
-.icon {
-  font-size: 30px;
-  padding-left: 40px;
+.iconSize {
+  font-size: 50px;
+  padding-left: 10px;
 }
 .iconSmall {
   text-align: center;
+  font-size: 12px;
 }
 
 p {
