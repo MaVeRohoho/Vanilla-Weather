@@ -31,13 +31,13 @@
     <hr>
 <div class="row">
     <div class="col-3">
-        <h1 id="city"></h1>
+        <h1 id="city">Zurich</h1>
     </div>
     <div class="col-3">
         <dev class="icon"> <i class="fal fa-snowflake"></i>
     </div>
     <div class="col-1">
-        <h1 id="temperature"></h1>
+        <h1 id="temperature">2</h1>
     </div>
     <div class="col-5">
         <dev class="temp"> <smaller> °C | °F</smaller>
@@ -45,17 +45,16 @@
 </div>
 <hr />
 <div class="row">
-    <div class="col-sm">
+    <div class="col-6">
         <ul>
             <li> Sunday 03:00</li>
-            <li>Clear Sky</li>
+            <li id="description">Cloudy</li>
         </ul>
     </div>
-    <div class="col-sm">
+    <div class="col-6">
         <ul>
-            <li>Precipitation: 15%</li>
-            <li>Humidity: 0 %</li>
-            <li>Wind : 20 km/h </li>
+            <li>Humidity: <span id="humid"></span> % </li>
+            <li>Wind: <span id="wind"></span> km/h </li>
         </ul>
     </div>
 </div>
@@ -65,7 +64,7 @@
             <ul>
                 <li><h6>Early</h6></li>
                 <li><div class = "iconSmall"><i class="fal fa-sunrise"></i></div></li>
-                <li></li>
+                <li id="sunrise"></li>
             </ul>
         </div>
         <div class="col-sm-2">
@@ -93,14 +92,14 @@
             <ul>
                 <li><h6>Evening</h6> </li>
                 <li><div class="iconSmall"><i class="fal fa-sunset"></i></div></li>
-                <li></li>
+                <li id="sunset"></li>
             </ul>
         </div>
         <div class="col-sm-2">
         <ul>
             <li><h6>Night</h6></li>
             <li><div class="iconSmall"><i class="fal fa-moon-stars"></i></div></li>
-            <li></li>
+            <li ></li>
         </ul>
         </div>
     </div>
