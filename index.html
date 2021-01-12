@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,104 +11,105 @@
     <link rel="stylesheet" href="style.css">
     <title>Vanilla Weather</title>
 </head>
+
 <body>
-<div class="container">
-    <div class="weather-vanilla-wrapper">
-    <div class="weather-vanilla">
-        <form class="search-form" id="search-form">
-            <div class="row">
-                <div class="col-6">
-                    <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off" id="city-input"
-                        class="form-control shadow-sm" />
+    <div class="container">
+        <div class="weather-vanilla-wrapper">
+            <div class="weather-vanilla">
+                <form class="search-form" id="search-form">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="search" placeholder="Type a city.." autofocus="on" autocomplete="off"
+                                id="city-input" class="form-control shadow-sm" /> 
+                        </div>
+                        <div class="col-3"> 
+                            <input type="submit" value="Search" class="form-control btn btn-outline-dark shadow-sm" />
+                        </div>
+                        <div class="col-3">
+                            <button type="button" class="btn btn-outline-dark w-100">Find Me</button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="row">
+                    <div class="col-5">
+                        <h1 id="city"></h1>
+                    </div>
+                    <div class="col-2">
+                        <div class="iconSize">
+                            <div id="mainIcon">
+                                <img src="" alt="" id="iconOpenWeather" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <h2 id="temperature"></h2>
+                    </div>
+                    <div class="col-1">
+                        <h2>°</h2>
+                    </div>
+                    <div class="col-3">
+                        <div class="units">
+                            <a href="#" id="celcius" class="active">°C</a> |
+                            <a href="#" id="fahrenheit">°F</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <input type="submit" value="Search" class="form-control btn btn-outline-dark shadow-sm" />
+                <hr />
+                <div class="row">
+                    <div class="col-6">
+                        <ul>
+                            <div >Last Update: <li id="date"></li></div>
+                            <li id="description">Cloudy</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>Humidity: <span id="humid"></span> % </li>
+                            <li>Wind: <span id="wind"></span> km/h </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h6>Early</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast"/>
+                        <p class = "tempStyle">17°</p> 
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Morning</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast"/>
+                        <p class="tempStyle">17°</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Lunch</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast"/>
+                        <p class="tempStyle">17°</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Afternoon</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast"/>
+                        <p class="tempStyle">17°</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Evening</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast"/>
+                        <p class="tempStyle">17°</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h6>Night</h6>
+                        <img src="" alt=""  id="iconOpenWeather" class= "weatherForecast" />
+                        <p class="tempStyle">17°</p>
+                    </div>
                 </div>
             </div>
-        </form>
-    <hr>
-<div class="row">
-    <div class="col-6">
-        <h1 id="city" ></h1>
-    </div>
-    <div class="col-2">
-        <div class="iconSize">
-        <div id="mainIcon">
-        <img src="" alt="" id = "iconOpenWeather"/>
-        </div>
-        </div>
-    </div>
-    <div class="col-1">
-        <h2 id="temperature"></h2>
-    </div>
-    <div class="col-3">
-        <div class="units"> 
-            <a href="#" id="celcius" class="active">°C</a> | 
-            <a href = "#" id="fahrenheit">°F</a> 
-        </div>
-    </div>
-</div>
-<hr />
-<div class="row">
-    <div class="col-6">
-        <ul>
-            <li id="date"> Sunday 03:00</li>
-            <li id="description">Cloudy</li>
-        </ul>
-    </div>
-    <div class="col-6">
-        <ul>
-            <li>Humidity: <span id="humid"></span> % </li>
-            <li>Wind: <span id="wind"></span> km/h </li>
-        </ul>
-    </div>
-</div>
-<hr />
-    <div class="row">
-        <div class="col-sm-2">
-            <h6>Early</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-        <div class="col-sm-2">
-            <h6>Morning</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-        <div class="col-sm-2">
-            <h6>Lunch</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-        <div class="col-sm-2">
-            <h6>Afternoon</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-        <div class="col-sm-2">
-            <h6>Evening</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-        <div class="col-sm-2">
-            <h6>Night</h6>
-            <img src="" alt="" id="iconOpenWeather" />
-            <div class="weather-forecast"></div>
-            17°
-        </div>
-    </div>
-        </div>
-            <p>
-                <a href="https://github.com/MaVeRohoho/Vanilla-Weather" target="blank">Open-Source by </a>Margot Rohner
+            <p class="openSource">
+                Open-Source by <a href="https://github.com/MaVeRohoho/Vanilla-Weather" target="blank">Margot Rohner</a>
             </p>
+        </div>
     </div>
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
-    
