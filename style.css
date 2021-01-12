@@ -39,7 +39,7 @@ a {
   text-decoration: none;
 }
 a.hover {
-  color: blue;
+  color: rgb(121, 121, 124);
 }
 ul {
   margin: 0;

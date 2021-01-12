@@ -36,6 +36,18 @@ function displayTemp (response) {
     dateElement.innerHTML = formatDate (response.data.dt * 1000);     
     let iconElement = document.querySelector ("#iconOpenWeather")     
     iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let earlyIcon = document.querySelector ("#iconOpenWeatherEarly")     
+    earlyIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let morningIcon = document.querySelector ("#iconOpenWeatherMorning")     
+    morningIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let lunchIcon = document.querySelector ("#iconOpenWeatherLunch")     
+    lunchIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let afternoonIcon = document.querySelector ("#iconOpenWeatherAfternoon")     
+    afternoonIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let eveningIcon = document.querySelector ("#iconOpenWeatherEvening")     
+    eveningIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
+    let nightIcon = document.querySelector ("#iconOpenWeatherNight")     
+    nightIcon.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png` ) 
 
     let mainIcon = document.querySelector("#mainIcon");
     if(response.data.weather[0].icon === "01d") {
@@ -102,5 +114,12 @@ let celciusTemp= null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+
+function handlePosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+}
+navigator.geolocation.getCurrentPosition(handlePosition)
 
 search ("Zurich"); 
