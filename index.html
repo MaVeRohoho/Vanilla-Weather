@@ -23,9 +23,6 @@
                 <div class="col-3">
                     <input type="submit" value="Search" class="form-control btn btn-outline-dark shadow-sm" />
                 </div>
-                <div class="col-3">
-                    <button class="btn btn-outline-dark w-100">Find Me</button>
-                </div>
             </div>
         </form>
     <hr>
@@ -43,10 +40,13 @@
     <div class="col-1">
     </div>
     <div class="col-1">
-        <h1 id="temperature"></h1>
+        <h2 id="temperature"></h2>
     </div>
     <div class="col-2">
-        <div class="temp"> <smaller> °C | °F</smaller> </div>
+        <div class="units"> 
+            <a href="#" id="celcius" class="active">°C</a> | 
+            <a href = "#" id="fahrenheit">°F</a> 
+        </div>
     </div>
 </div>
 <hr />

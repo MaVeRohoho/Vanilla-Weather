@@ -16,7 +16,7 @@ form {
   margin-bottom: 30px;
 }
 input {
-  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -24,14 +24,19 @@ h1 {
   font-weight: 100;
   margin-top: 15px;
 }
-
-smaller {
-  font-size: 16px;
-}
-.temp {
+h2 {
+  font-size: 40px;
+  font-weight: 100;
   margin-top: 15px;
 }
-
+.units {
+  margin-top: 20px;
+}
+a {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
 ul {
   margin: 0;
   padding: 0;

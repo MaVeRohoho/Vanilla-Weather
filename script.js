@@ -1,9 +1,10 @@
+
+
 function search (city){
 let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemp);
 }
-
 function formatDate (timestamp){
     let date = new Date (timestamp);
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" ];
@@ -16,11 +17,14 @@ function formatDate (timestamp){
     if (minutes < 10){
         minutes = `0${minutes}`;
     }
-    return `${day} ${hours}:${minutes}`;
+    return `${day}, ${hours}:${minutes}`;
 }
 function displayTemp (response) {
     let temperatureElement = document.querySelector ("#temperature");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);    
+
+    celciusTemp = response.data.main.temp;
+
     let cityElement = document.querySelector ("#city");
     cityElement.innerHTML = response.data.name;    
     let descriptionElement = document.querySelector ("#description");
@@ -78,6 +82,26 @@ function handleSubmit (event){
      let cityInputElement = document.querySelector("#city-input");
      search(cityInputElement.value);
 }
+function displayFahrenheit (event) {
+    event.preventDefault();
+    let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp); 
+}
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener ("click", displayFahrenheit);
+
+function displayCelcius (event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener ("click", displayCelcius);
+
+let celciusTemp= null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+search ("Zurich"); 
