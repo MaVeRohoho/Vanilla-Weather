@@ -93,6 +93,21 @@ function handleSubmit (event){
      let cityInputElement = document.querySelector("#city-input");
      search(cityInputElement.value);
 }
+function searchCoords (position){
+let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`;
+axios.get(apiUrl).then(displayTemp);
+}
+
+function getCurrentLocation (event) {
+    event. preventDefault ();
+    navigator.geolocation.getCurrentPosition(searchCoords);
+}
+
+let findMeButton = document.querySelector ("#my-weather-button");
+findMeButton .addEventListener ("click", getCurrentLocation);
+
+
 function displayFahrenheit (event) {
     event.preventDefault();
     let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
@@ -115,11 +130,5 @@ let celciusTemp= null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-
-function handlePosition(position) {
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
-}
-navigator.geolocation.getCurrentPosition(handlePosition)
 
 search ("Zurich"); 
