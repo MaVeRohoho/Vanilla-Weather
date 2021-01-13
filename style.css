@@ -1,7 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: black;
+  background-image: url(forest.jpg);
+  background-size: 100%;
 }
+
 .weather-vanilla-wrapper {
   max-width: 600px;
   margin: 50px auto;
@@ -9,14 +12,13 @@ body {
 .weather-vanilla {
   padding: 30px;
   border: 1px solid #000000;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
 }
-form {
-  margin-bottom: 30px;
-}
+
 input {
-  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 h1 {
@@ -31,15 +33,12 @@ h2 {
 }
 .units {
   margin-top: 20px;
-  padding-left: 10px;
 }
-a {
+.unit {
+  font-size: 20px;
   color: black;
   cursor: default;
   text-decoration: none;
-}
-a.hover {
-  color: rgb(121, 121, 124);
 }
 ul {
   margin: 0;
@@ -66,7 +65,10 @@ h6 {
   text-align: center;
   font-size: 12px;
 }
-
+a {
+  color: white;
+}
 p {
   font-size: 12px;
+  color: white;
 }
