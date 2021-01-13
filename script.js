@@ -9,9 +9,15 @@ xios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast (response) {
+    console.log(response.data.list [0]);
     let forecastElement = document.querySelector ("#forecast");
     
-    forecastElement.innerHTML = ``
+    forecastElement.innerHTML = `
+    <div class="col-sm-2">
+        <h6>Early</h6>
+        <img src="" alt=""  id="iconOpenWeatherEarly" class= "weatherForecast"/>
+        <h6 class = "tempStyle">17°</h6> 
+    </div>`
 
 }
 
