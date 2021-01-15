@@ -5,16 +5,21 @@ function search(city) {
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = `
+function displayForecast(response) {   
+let forecastElement = document.querySelector("#forecast");
+forecastElement.innerHTML = null;
+let forecast = null;
+for (let index = 0; index < 6; index ++) {
+forecast = response.data.list [index];  
+  forecastElement.innerHTML += `
     <div class="col-sm-2 text-center">
-        <h6>Early  ${formatHours}</h6>
-        <i class="${getIcon(response.data.list[0].weather[0].icon)}"></i>
+        <h6> ${formatHours (forecast.dt*1000)}</h6>
+        <i class="${getIcon(response.data.list[index].weather[0].icon)}"></i>
         <h6 class="tempStyle">${Math.round(
           response.data.list[0].main.temp
         )}°</h6> 
     </div>`;
+}
 }
 function formatDate(timestamp) {
   let date = new Date(timestamp);
@@ -31,7 +36,7 @@ function formatDate(timestamp) {
   return `${day}, ${formatHours(timestamp)}`;
 }
 function formatHours (timestamp){
-let date = new Date(timestamp);
+let date = new Date( timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
