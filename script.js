@@ -47,20 +47,12 @@ let date = new Date( timestamp);
   }
   return `${hours}:${minutes}`;
 }
-
 function searchCoords(position) {
   let apiKey = "fc50e00c9bbae52d3e97a4dfd4c8a5f5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayTemp);
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-}
-function searchCoords(position) {
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(displayTemp);
 }
 function getCurrentLocation(event) {
   event.preventDefault();
